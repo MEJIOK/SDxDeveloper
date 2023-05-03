@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs
+/SDxDeveloper.Client/bin/Debug
+/SDxDeveloper.Client/obj/Debug
