@@ -1,0 +1,46 @@
+<Container>
+	<SDADocumentClassification>
+		<IObject UID="SDC_PLA" Name="PLA" Description="Linear pipeline route plan / План трассы линейной части трубопровода" ContainerID="SUP.Doc_ClassTree" />
+		<ISPFObjClass />
+		<ISDADocumentClassification />
+		<ISDAFacilityDocClass />
+		<ICFIHOSDetails CFIHOSPrimKey="PLA" />
+	</SDADocumentClassification>
+
+	<Rel>
+		<IObject UID="SDC_Design_Documents_/_Проектная_документация.SDC_PLA.CM" ContainerID="SUP.Doc_ClassTree" />
+		<IRel UID1="SDC_Design_Documents_/_Проектная_документация" DefUID="SPFClassMember" UID2="SDC_PLA" />
+	</Rel>
+
+	<Rel>
+		<IObject UID="PR_BGPP.SDC_PLA" ContainerID="" />
+		<ISPFClaimableItem />
+		<IRel UID1="PR_BGPP" DefUID="SCLBCollaborationScopeDocClassification" UID2="SDC_PLA" />
+	</Rel>
+
+	<Rel>
+		<IObject UID="PL_BGPP.SDC_PLA" ContainerID="" />
+		<ISPFClaimableItem />
+		<IRel UID1="PL_BGPP" DefUID="SCLBCollaborationScopeDocClassification" UID2="SDC_PLA" />
+	</Rel>
+
+	<Rel>
+		<IObject UID="SDC_PLA.e1SUPPLA" ContainerID="SUP.Doc_ClassTree" />
+		<IRel UID1="SDC_PLA" DefUID="SPFObjClassEnumEnum" UID2="e1SUPPLA" />
+	</Rel>
+
+	<EnumListType>
+		<IObject UID="e1SUPPLA" Name="PLA" Description="Linear pipeline route plan / План трассы линейной части трубопровода" ContainerID="SUP.Doc_ClassTree" />
+		<IEnumListType />
+		<IEnumEnum EnumNumber="10052" />
+		<IConditionalOrdering />
+		<IPropertyType />
+		<ISchemaObj DisplayName="PLA" />
+	</EnumListType>
+
+	<Rel>
+		<IObject UID="e1SUPDesign_Documents_/_Проектная_документация.e1SUPPLA" ContainerID="SUP.Doc_ClassTree" />
+		<ISchemaObj />
+		<IRel UID1="e1SUPDesign_Documents_/_Проектная_документация" DefUID="Contains" UID2="e1SUPPLA" />
+	</Rel>
+</Container>

@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<Container SoftwareVersion="04.02.00.09" IObject_OBID="Auto" IObject_CreationDate="Now" IObject_TerminationDate="9999/12/31-23:59:59:999" IObject_LastUpdatedDate="Now" IObject_CreationUser="superuser" IObject_DomainUID="Auto" IObject_UniqueKey="Auto" IRel_DomainUID1="Auto" IRel_DomainUID2="Auto">
+  <SPFLoginUser>
+    <IObject UID="USR_adelya.kamalova" Name="Adelya Kamalova" Description="Specialist of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="adelya.kamalova@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="adelya.kamalova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Specialist of document control" EE_UserPhoneNumber="+998781482255 (36225)" />
+  </SPFLoginUser>
+	
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_adelya.kamalova" UID2="CO_UZLE" />
+    <IObject UID="USR_adelya.kamalova.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+	
+  <SPFLoginUser>
+    <IObject UID="USR_afzal.ibrokhimov" Name="Afzal Ibrokhimov" Description="Document Control Specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="afzal.ibrokhimov@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="afzal.ibrokhimov" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+	<ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Document Control Specialist" EE_UserPhoneNumber="+998(90) 004-84-44" />
+  </SPFLoginUser>
+	
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_afzal.ibrokhimov" UID2="CO_EENG" />
+    <IObject UID="USR_afzal.ibrokhimov.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+	
+  <SPFLoginUser>
+    <IObject UID="USR_alina.yunusova" Name="Alina Bukhaltseva" Description="Doc management manager" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="alina.yunusova@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="alina.yunusova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Doc management manager" EE_UserPhoneNumber="14669" />
+  </SPFLoginUser>
+	
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_alina.yunusova" UID2="CO_EENG" />
+    <IObject UID="USR_alina.yunusova.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+	
+  <SPFLoginUser>
+    <IObject UID="USR_andrey.durnev" Name="Andrey Durnev" Description="Doc management chief specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="andrey.durnev@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="andrey.durnev" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Doc management chief specialist" EE_UserPhoneNumber="16668" />
+  </SPFLoginUser>
+	
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_andrey.durnev" UID2="CO_EENG" />
+    <IObject UID="USR_andrey.durnev.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_bakhodir.absamadov" Name="Bakhodir Absamadov" Description="Lead Document Control Specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="bakhodir.absamadov@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="bakhodir.absamadov" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Lead Document Control Specialist" EE_UserPhoneNumber="14685" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_bakhodir.absamadov" UID2="CO_EENG" />
+    <IObject UID="USR_bakhodir.absamadov.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_bekhzod.nasullaev" Name="Bekhzod Nasullaev" Description="Specialist of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="bekhzod.nasullaev@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="bekhzod.nasullaev" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Specialist of document control" EE_UserPhoneNumber="+998781482255 (19753)" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_bekhzod.nasullaev" UID2="CO_UZLE" />
+    <IObject UID="USR_bekhzod.nasullaev.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_ekaterina.kim" Name="Ekaterina Kim" Description="Document Control Specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="ekaterina.kim@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="ekaterina.kim" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Document Control Specialist" EE_UserPhoneNumber="+998(95) 110-60-30, 38592" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_ekaterina.kim" UID2="CO_EENG" />
+    <IObject UID="USR_ekaterina.kim.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_ekaterina.yugay" Name="Ekaterina Yugay" Description="Doc management chief specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="ekaterina.yugay@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="ekaterina.yugay" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Doc management chief specialist" EE_UserPhoneNumber="34583" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_ekaterina.yugay" UID2="CO_EENG" />
+    <IObject UID="USR_ekaterina.yugay.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_emine.ishdavletova" Name="Emine Ishdavletova" Description="Document Control Specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="emine.ishdavletova@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="emine.ishdavletova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Document Control Specialist" EE_UserPhoneNumber="16674" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_emine.ishdavletova" UID2="CO_EENG" />
+    <IObject UID="USR_emine.ishdavletova.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_evgeniya.dolgova" Name="Evgeniya Dolgova" Description="Specialist of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="evgeniya.dolgova@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="evgeniya.dolgova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Specialist of document control" EE_UserPhoneNumber="+998781482255 (19742)" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_evgeniya.dolgova" UID2="CO_UZLE" />
+    <IObject UID="USR_evgeniya.dolgova.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_farangiz.mustafoeva" Name="Farangiz Mustafoeva" Description="Document Control Specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="farangiz.mustafoeva@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="farangiz.mustafoeva" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Document Control Specialist" EE_UserPhoneNumber="+998(99) 373-37-32" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_farangiz.mustafoeva" UID2="CO_EENG" />
+    <IObject UID="USR_farangiz.mustafoeva.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_irina.zakharkina" Name="Irina Zakharkina" Description="Specialist of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="irina.zakharkina@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="irina.zakharkina" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Specialist of document control" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_irina.zakharkina" UID2="CO_UZLE" />
+    <IObject UID="USR_irina.zakharkina.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_madina.gazieva" Name="Madina Gazieva" Description="Trainee of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="madina.gazieva@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="madina.gazieva" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Trainee of document control" EE_UserPhoneNumber="+998781482255 (37457)" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_madina.gazieva" UID2="CO_UZLE" />
+    <IObject UID="USR_madina.gazieva.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_makhlie.oslonova" Name="Makhlie Oslonova" Description="Specialist of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="makhlie.oslonova@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="makhlie.oslonova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Specialist of document control" EE_UserPhoneNumber="+998781482255 (36209)" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_makhlie.oslonova" UID2="CO_UZLE" />
+    <IObject UID="USR_makhlie.oslonova.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_marina.bashirova" Name="Marina Bashirova" Description="Specialist of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="marina.bashirova@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="marina.bashirova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Specialist of document control" EE_UserPhoneNumber="+998781482255 (19767)" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_marina.bashirova" UID2="CO_UZLE" />
+    <IObject UID="USR_marina.bashirova.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_mashkhura.sayidova" Name="Mashkhura Sayidova" Description="Doc management chief specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="mashkhura.sayidova@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="mashkhura.sayidova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Doc management chief specialist" EE_UserPhoneNumber="15590" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_mashkhura.sayidova" UID2="CO_EENG" />
+    <IObject UID="USR_mashkhura.sayidova.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_mirzokhid.mirsharipov" Name="Mirzohid Mirsharipov" Description="Document Control Specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="mirzokhid.mirsharipov@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="mirzokhid.mirsharipov" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Document Control Specialist" EE_UserPhoneNumber="+998(90) 021-99-14" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_mirzokhid.mirsharipov" UID2="CO_EENG" />
+    <IObject UID="USR_mirzokhid.mirsharipov.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_mokhiyat.mavlyanova" Name="Mokhiyat Mavlyanova" Description="Document Control Specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="mokhiyat.mavlyanova@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="mokhiyat.mavlyanova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Document Control Specialist" EE_UserPhoneNumber="34619" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_mokhiyat.mavlyanova" UID2="CO_EENG" />
+    <IObject UID="USR_mokhiyat.mavlyanova.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_nigina.khusainova" Name="Nigina Khusainova" Description="Specialist of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="nigina.khusainova@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="nigina.khusainova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Specialist of document control" EE_UserPhoneNumber="+998781482255 (19720)" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_nigina.khusainova" UID2="CO_UZLE" />
+    <IObject UID="USR_nigina.khusainova.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_rano.ergasheva" Name="Rano Ergasheva" Description="Document Control Specialist" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="rano.ergasheva@ent-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="rano.ergasheva" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Document Control Specialist" EE_UserPhoneNumber="34645" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_rano.ergasheva" UID2="CO_EENG" />
+    <IObject UID="USR_rano.ergasheva.CO_EENG.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_sevinch.radzhabova" Name="Sevinch Radzhabova" Description="Specialist of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="sevinch.radzhabova@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="sevinch.radzhabova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Specialist of document control" EE_UserPhoneNumber="+998781482255 (36220)" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_sevinch.radzhabova" UID2="CO_UZLE" />
+    <IObject UID="USR_sevinch.radzhabova.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_valentina.mescheryakova" Name="Valentina Meshcheryakova" Description="Chief specialist of document control department" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="valentina.mescheryakova@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="valentina.mescheryakova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Chief specialist of document control department" EE_UserPhoneNumber="+998781482255 (36127)" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_valentina.mescheryakova" UID2="CO_UZLE" />
+    <IObject UID="USR_valentina.mescheryakova.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+  <SPFLoginUser>
+    <IObject UID="USR_zhakhangul.kemalatdinova" Name="Zhakhangul Kemalatdinova" Description="Leading specialist of document control" ContainerID="EE.Admin" />
+    <ISPFUser />
+    <ISPFEmailUser SPFEmailAddress="zhakhangul.kemalatdinova@uzliti-en.com" SPFUsersEmailFormat="e1HTML" />
+    <ISPFLoginUser SPFLoginName="zhakhangul.kemalatdinova" SPFNotificationType="e1Email" />
+    <ISPFParticipant />
+    <ISPFAdminItem />
+    <ISPFSubscribableItem />
+    <IEE_UserExt EE_UserTitle="Leading specialist of document control" EE_UserPhoneNumber="+998781482255 (19716)" />
+  </SPFLoginUser>
+  <Rel>
+    <IRel DefUID="SPFUserOrganization" UID1="USR_zhakhangul.kemalatdinova" UID2="CO_UZLE" />
+    <IObject UID="USR_zhakhangul.kemalatdinova.CO_UZLE.SPFUserOrganization" ContainerID="EE.Admin" />
+  </Rel>
+</Container>

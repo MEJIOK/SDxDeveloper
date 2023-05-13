@@ -1,7 +1,0 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs
-/SDxDeveloper.Client/bin/Debug
-/SDxDeveloper.Client/obj/Debug
