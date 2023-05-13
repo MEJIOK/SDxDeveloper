@@ -8,52 +8,57 @@
              xmlns:vm="clr-namespace:SDxDeveloper.Client.ViewModels"
              
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="80" d:DesignWidth="800"
              d:DataContext="{d:DesignInstance Type=vm:HomeViewModel}">
-    <StackPanel>
-        <WrapPanel>
+    <DockPanel>
+        <WrapPanel DockPanel.Dock="Top">
             <Button Content="Load" Command="{Binding LoadFromFileCommand}" />
             <Button Content="Export" />
             <Button Content="Create Instruction" />
         </WrapPanel>
 
-        <ComboBox ItemsSource="{Binding SDxObjectTypes}">
-            <ComboBox.ItemTemplate>
+        <ListView ItemsSource="{Binding LoadedObjects}"
+                  VerticalContentAlignment="Top"
+                  ScrollViewer.CanContentScroll="True"
+                  DockPanel.Dock="Bottom">
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding ObjectTypeDisplay}" />
+                    <Grid Margin="10" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Content="UID" />
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               Content="{Binding UID}" />
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Content="Class" />
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Content="{Binding ClassName}" />
+
+                        <Label Grid.Row="2"
+                               Grid.Column="0"
+                               Content="Name" />
+                        <Label Grid.Row="2"
+                               Grid.Column="1"
+                               Content="{Binding Name}" />
+                    </Grid>
                 </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-
-        <ListView ItemsSource="{Binding LoadedObjects}">
-
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Class Name">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding ClassName}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-
-                    <GridViewColumn Header="UID">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding UID}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-
-                    <GridViewColumn Header="Name">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
+            </ListView.ItemTemplate>
         </ListView>
-    </StackPanel>
+    </DockPanel>
 </UserControl>

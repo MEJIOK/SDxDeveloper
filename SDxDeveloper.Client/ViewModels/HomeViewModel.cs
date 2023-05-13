@@ -15,10 +15,6 @@ namespace SDxDeveloper.Client.ViewModels
     {
         private ObservableCollection<SDxObjectInstanceViewModel> _LoadedObjects = new ObservableCollection<SDxObjectInstanceViewModel>();
 
-        private readonly ObservableCollection<SDxObjectTypeListItemViewModel> _SDxObjectTypes;
-
-        public IEnumerable<SDxObjectTypeListItemViewModel>? SDxObjectTypes => _SDxObjectTypes;
-
         public ObservableCollection<SDxObjectInstanceViewModel> LoadedObjects { 
             get
             {
@@ -28,11 +24,6 @@ namespace SDxDeveloper.Client.ViewModels
 
         public ObservableCollection<string> LoadedTypes { get; } = new ObservableCollection<string>();
 
-        public ICommand LoadFromFileCommand => new LoadObjectFromFileCommand(LoadedObjects, SDxObjectTypes);
-
-        public HomeViewModel()
-        {
-            _SDxObjectTypes = new ObservableCollection<SDxObjectTypeListItemViewModel>();
-        }
+        public ICommand LoadFromFileCommand => new LoadObjectFromFileCommand(LoadedObjects);
     }
 }
