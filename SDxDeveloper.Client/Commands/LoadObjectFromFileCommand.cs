@@ -15,16 +15,13 @@ namespace SDxDeveloper.Client.Commands
 {
     public class LoadObjectFromFileCommand : ICommand
     {
-        private readonly IEnumerable<SDxObjectInstance> _Collection;
-
-        private readonly IEnumerable<SDxObjectTypeListItemViewModel> _LoadedTypes;
+        private readonly IEnumerable<SDxObjectInstanceViewModel> _Collection;
 
         public event EventHandler? CanExecuteChanged;
 
-        public LoadObjectFromFileCommand(IEnumerable<SDxObjectInstance> collection, IEnumerable<SDxObjectTypeListItemViewModel> loadedTypes)
+        public LoadObjectFromFileCommand(IEnumerable<SDxObjectInstanceViewModel> collection)
         {
             _Collection = collection;
-            _LoadedTypes = loadedTypes;
         }
 
         public bool CanExecute(object? parameter)
@@ -59,28 +56,9 @@ namespace SDxDeveloper.Client.Commands
 
                     foreach (XmlElement element in doc.DocumentElement)
                     {
-                        (_Collection as ObservableCollection<SDxObjectInstance>).Add(new SDxObjectInstance(element));
+                        (_Collection as ObservableCollection<SDxObjectInstanceViewModel>).Add(new SDxObjectInstanceViewModel(new SDxObjectInstance(element)));
                     }
                 }
-            }
-
-            var types = new Dictionary<string, int>();
-
-            foreach (string type in _Collection.Select(x => x.ClassName))
-            {
-                if (!types.ContainsKey(type))
-                {
-                    types.Add(type, 0);
-                }
-                else
-                {
-                    types[type] += 1;
-                }
-            }
-
-            foreach (var type in types.Keys)
-            {
-                (_LoadedTypes as ObservableCollection<SDxObjectTypeListItemViewModel>).Add(new SDxObjectTypeListItemViewModel(type, types[type]));
             }
         }
     }

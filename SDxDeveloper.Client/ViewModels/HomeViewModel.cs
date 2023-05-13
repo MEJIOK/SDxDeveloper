@@ -13,13 +13,13 @@ namespace SDxDeveloper.Client.ViewModels
 {
     public class HomeViewModel : ViewModelBase
     {
-        private ObservableCollection<SDxObjectInstance> _LoadedObjects = new ObservableCollection<SDxObjectInstance>();
+        private ObservableCollection<SDxObjectInstanceViewModel> _LoadedObjects = new ObservableCollection<SDxObjectInstanceViewModel>();
 
         private readonly ObservableCollection<SDxObjectTypeListItemViewModel> _SDxObjectTypes;
 
         public IEnumerable<SDxObjectTypeListItemViewModel>? SDxObjectTypes => _SDxObjectTypes;
 
-        public ObservableCollection<SDxObjectInstance> LoadedObjects { 
+        public ObservableCollection<SDxObjectInstanceViewModel> LoadedObjects { 
             get
             {
                 return _LoadedObjects;

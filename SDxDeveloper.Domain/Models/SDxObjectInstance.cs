@@ -25,5 +25,27 @@ namespace SDxDeveloper.Domain.Models
                 Interfaces.Add(new SDxInterfaceInstance(elInterface));
             }
         }
+
+        public string? GetProperty(string propertyName)
+        {
+            if (Interfaces != null)
+            {
+                foreach (SDxInterfaceInstance intf in Interfaces)
+                {
+                    if (intf.Properties != null)
+                    {
+                        foreach (SDxPropertyInstance prop in intf.Properties)
+                        {
+                            if (prop != null && prop.Name == propertyName)
+                            {
+                                return prop.Value;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }
