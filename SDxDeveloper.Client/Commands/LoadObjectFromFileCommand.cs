@@ -17,11 +17,14 @@ namespace SDxDeveloper.Client.Commands
     {
         private readonly ObservableCollection<SDxObjectInstance> _Collection;
 
+        private readonly ObservableCollection<string> _LoadedTypes;
+
         public event EventHandler? CanExecuteChanged;
 
-        public LoadObjectFromFileCommand(ObservableCollection<SDxObjectInstance> collection)
+        public LoadObjectFromFileCommand(ObservableCollection<SDxObjectInstance> collection, ObservableCollection<string> loadedTypes)
         {
             _Collection = collection;
+            _LoadedTypes = loadedTypes;
         }
 
         public bool CanExecute(object? parameter)
@@ -59,6 +62,25 @@ namespace SDxDeveloper.Client.Commands
                         _Collection.Add(new SDxObjectInstance(element));
                     }
                 }
+            }
+
+            var types = new Dictionary<string, int>();
+
+            foreach (string type in _Collection.Select(x => x.ClassName))
+            {
+                if (!types.ContainsKey(type))
+                {
+                    types.Add(type, 0);
+                }
+                else
+                {
+                    types[type] += 1;
+                }
+            }
+
+            foreach (var type in types.Keys)
+            {
+                _LoadedTypes.Add($"{type} ({types[type]})");
             }
         }
     }

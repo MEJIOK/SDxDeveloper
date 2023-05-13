@@ -14,14 +14,39 @@
         <WrapPanel>
             <Button Content="Load" Command="{Binding LoadFromFileCommand}" />
             <Button Content="Export" />
+            <Button Content="Create Instruction" />
         </WrapPanel>
-        <DataGrid ItemsSource="{Binding LoadedObjects}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Class" />
-                <DataGridTextColumn Header="UID" />
-                <DataGridTextColumn Header="Name" />
-                <DataGridTextColumn Header="Description" />
-            </DataGrid.Columns>
-        </DataGrid>
+        
+        <ComboBox ItemsSource="{Binding LoadedTypes}" />
+
+        <ListView>
+            <ListViewItem />
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="UID">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="SomeName" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Class Name">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="SomeName" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Name">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="SomeName" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </StackPanel>
 </UserControl>
