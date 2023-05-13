@@ -16,8 +16,14 @@
             <Button Content="Export" />
             <Button Content="Create Instruction" />
         </WrapPanel>
-        
-        <ComboBox ItemsSource="{Binding LoadedTypes}" />
+
+        <ComboBox ItemsSource="{Binding SDxObjectTypes}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ObjectTypeDisplay}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
         <ListView>
             <ListViewItem />

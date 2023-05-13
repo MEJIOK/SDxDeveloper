@@ -15,13 +15,13 @@ namespace SDxDeveloper.Client.Commands
 {
     public class LoadObjectFromFileCommand : ICommand
     {
-        private readonly ObservableCollection<SDxObjectInstance> _Collection;
+        private readonly IEnumerable<SDxObjectInstance> _Collection;
 
-        private readonly ObservableCollection<string> _LoadedTypes;
+        private readonly IEnumerable<SDxObjectTypeListItemViewModel> _LoadedTypes;
 
         public event EventHandler? CanExecuteChanged;
 
-        public LoadObjectFromFileCommand(ObservableCollection<SDxObjectInstance> collection, ObservableCollection<string> loadedTypes)
+        public LoadObjectFromFileCommand(IEnumerable<SDxObjectInstance> collection, IEnumerable<SDxObjectTypeListItemViewModel> loadedTypes)
         {
             _Collection = collection;
             _LoadedTypes = loadedTypes;
@@ -34,7 +34,7 @@ namespace SDxDeveloper.Client.Commands
 
         public void Execute(object? parameter)
         {
-            OpenFileDialog dialog = new OpenFileDialog { Filter = "XML|*.xml", Multiselect = true };
+            var dialog = new OpenFileDialog { Filter = "XML|*.xml", Multiselect = true };
 
             var settings = new XmlDocument();
             settings.Load("usersettings.xml");
@@ -59,7 +59,7 @@ namespace SDxDeveloper.Client.Commands
 
                     foreach (XmlElement element in doc.DocumentElement)
                     {
-                        _Collection.Add(new SDxObjectInstance(element));
+                        (_Collection as ObservableCollection<SDxObjectInstance>).Add(new SDxObjectInstance(element));
                     }
                 }
             }
@@ -80,7 +80,7 @@ namespace SDxDeveloper.Client.Commands
 
             foreach (var type in types.Keys)
             {
-                _LoadedTypes.Add($"{type} ({types[type]})");
+                (_LoadedTypes as ObservableCollection<SDxObjectTypeListItemViewModel>).Add(new SDxObjectTypeListItemViewModel(type, types[type]));
             }
         }
     }
