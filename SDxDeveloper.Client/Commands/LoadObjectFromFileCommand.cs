@@ -15,13 +15,13 @@ namespace SDxDeveloper.Client.Commands
 {
     public class LoadObjectFromFileCommand : ICommand
     {
-        private readonly IEnumerable<SDxObjectInstanceViewModel> _Collection;
+        private readonly IEnumerable<SDxObjectInstanceViewModel> _LoadedObjects;
 
         public event EventHandler? CanExecuteChanged;
 
-        public LoadObjectFromFileCommand(IEnumerable<SDxObjectInstanceViewModel> collection)
+        public LoadObjectFromFileCommand(IEnumerable<SDxObjectInstanceViewModel> loadedObjects)
         {
-            _Collection = collection;
+            _LoadedObjects = loadedObjects;
         }
 
         public bool CanExecute(object? parameter)
@@ -54,9 +54,14 @@ namespace SDxDeveloper.Client.Commands
                     var doc = new XmlDocument();
                     doc.Load(filename);
 
-                    foreach (XmlElement element in doc.DocumentElement)
+                    if (doc != null
+                        && doc.DocumentElement != null
+                        && _LoadedObjects is ObservableCollection<SDxObjectInstanceViewModel> observableLoadedObjects)
                     {
-                        (_Collection as ObservableCollection<SDxObjectInstanceViewModel>).Add(new SDxObjectInstanceViewModel(new SDxObjectInstance(element)));
+                        foreach (XmlElement element in doc.DocumentElement)
+                        {
+                            observableLoadedObjects.Add(new SDxObjectInstanceViewModel(new SDxObjectInstance(element)));
+                        }
                     }
                 }
             }

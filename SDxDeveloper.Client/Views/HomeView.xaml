@@ -10,55 +10,97 @@
              mc:Ignorable="d" 
              d:DesignHeight="80" d:DesignWidth="800"
              d:DataContext="{d:DesignInstance Type=vm:HomeViewModel}">
-    <DockPanel>
-        <WrapPanel DockPanel.Dock="Top">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <WrapPanel Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Grid.Row="0">
             <Button Content="Load" Command="{Binding LoadFromFileCommand}" />
             <Button Content="Export" />
             <Button Content="Create Instruction" />
         </WrapPanel>
 
-        <ListView ItemsSource="{Binding LoadedObjects}"
-                  VerticalContentAlignment="Top"
-                  ScrollViewer.CanContentScroll="True"
-                  DockPanel.Dock="Bottom">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="10" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
+        <ListView Grid.Row="1"
+                  Grid.Column="0"
+                  ItemsSource="{Binding LoadedObjects}"
+                  SelectedItem="{Binding SelectedObject}">
+            <ListView.Resources>
+                <DataTemplate DataType="{x:Type vm:SDxObjectInstanceViewModel}">
+                    <GroupBox Header="{Binding ClassName}">
+                        <Grid>
+                            <Grid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Details" />
+                                </ContextMenu>
+                            </Grid.ContextMenu>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
 
-                        <Label Grid.Row="0"
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0"
                                Grid.Column="0"
                                Content="UID" />
-                        <Label Grid.Row="0"
+                            <Label Grid.Row="0"
                                Grid.Column="1"
                                Content="{Binding UID}" />
 
-                        <Label Grid.Row="1"
+                            <Label Grid.Row="1"
                                Grid.Column="0"
                                Content="Class" />
-                        <Label Grid.Row="1"
+                            <Label Grid.Row="1"
                                Grid.Column="1"
                                Content="{Binding ClassName}" />
 
-                        <Label Grid.Row="2"
+                            <Label Grid.Row="2"
                                Grid.Column="0"
                                Content="Name" />
-                        <Label Grid.Row="2"
+                            <Label Grid.Row="2"
                                Grid.Column="1"
                                Content="{Binding Name}" />
-                    </Grid>
+                        </Grid>
+                    </GroupBox>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.Resources>
         </ListView>
-    </DockPanel>
+
+        <ListView Grid.Row="1"
+                 Grid.Column="1"
+                 ItemsSource="{Binding SelectedObjectInterfaces}">
+            <ListView.Resources>
+                <DataTemplate DataType="{x:Type vm:SDxInterfaceInstanceViewModel}">
+                    <GroupBox Header="{Binding Name}">
+                        <ListView ItemsSource="{Binding Properties}">
+                            <ListView.Resources>
+                                <DataTemplate DataType="{x:Type vm:SDxPropertyInstanceViewModel}">
+                                    <WrapPanel>
+                                        <Label Content="{Binding Name}" />
+                                        <TextBox Text="{Binding Value}" />
+                                    </WrapPanel>
+                                </DataTemplate>
+                            </ListView.Resources>
+                        </ListView>
+                    </GroupBox>
+                </DataTemplate>
+            </ListView.Resources>
+        </ListView>
+    </Grid>
 </UserControl>
