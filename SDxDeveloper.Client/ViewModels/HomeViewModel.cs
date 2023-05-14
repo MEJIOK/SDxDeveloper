@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SDxDeveloper.Client.ViewModels
@@ -35,5 +36,7 @@ namespace SDxDeveloper.Client.ViewModels
         public ObservableCollection<SDxInterfaceInstanceViewModel>? SelectedObjectInterfaces => _SelectedObject?.Interfaces;
 
         public ICommand LoadFromFileCommand => new LoadObjectFromFileCommand(LoadedObjects);
+
+        public ICommand ExportToFileCommand => new ExportToFileCommand(LoadedObjects);
     }
 }

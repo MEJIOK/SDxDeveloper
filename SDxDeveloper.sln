@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDxDeveloper.Client", "SDxDeveloper.Client\SDxDeveloper.Client.csproj", "{A7A068D5-16C7-47B1-B53A-3C36E73E86BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDxDeveloper.Client", "SDxDeveloper.Client\SDxDeveloper.Client.csproj", "{A7A068D5-16C7-47B1-B53A-3C36E73E86BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDxDeveloper.Domain", "SDxDeveloper.Domain\SDxDeveloper.Domain.csproj", "{22BE9826-7663-4A4D-A278-D997BF194F03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDxDeveloper.Domain", "SDxDeveloper.Domain\SDxDeveloper.Domain.csproj", "{22BE9826-7663-4A4D-A278-D997BF194F03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDxDeveloper.Services", "SDxDeveloper.Services\SDxDeveloper.Services.csproj", "{DF9C80E5-6A36-4ECC-BD8E-EF9D16BBD928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{22BE9826-7663-4A4D-A278-D997BF194F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22BE9826-7663-4A4D-A278-D997BF194F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22BE9826-7663-4A4D-A278-D997BF194F03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9C80E5-6A36-4ECC-BD8E-EF9D16BBD928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9C80E5-6A36-4ECC-BD8E-EF9D16BBD928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9C80E5-6A36-4ECC-BD8E-EF9D16BBD928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9C80E5-6A36-4ECC-BD8E-EF9D16BBD928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

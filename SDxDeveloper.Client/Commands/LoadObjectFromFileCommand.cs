@@ -2,6 +2,7 @@
 using SDxDeveloper.Client.State;
 using SDxDeveloper.Client.ViewModels;
 using SDxDeveloper.Domain.Models;
+using SDxDeveloper.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -42,7 +43,7 @@ namespace SDxDeveloper.Client.Commands
                 {
                     if (node.Name == "DefaultFileExplorePath")
                     {
-                        dialog.InitialDirectory = node.InnerText;
+                        dialog.InitialDirectory = node.InnerText; 
                     }
                 }
             }

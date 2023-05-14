@@ -8,3 +8,5 @@
 *.user
 /SDxDeveloper.Domain/bin/Debug/net7.0-windows
 /SDxDeveloper.Domain/obj
+/SDxDeveloper.Services/bin/Debug/net7.0-windows
+/SDxDeveloper.Services/obj
