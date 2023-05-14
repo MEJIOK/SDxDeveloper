@@ -9,7 +9,7 @@ namespace SDxDeveloper.Domain.Models
 {
     public class SDxObjectInstance
     {
-        private readonly XmlElement _Source;
+        public XmlElement Source { get; }
 
         public string? ClassName { get; set; }
 
@@ -17,10 +17,10 @@ namespace SDxDeveloper.Domain.Models
 
         public SDxObjectInstance(XmlElement source)
         {
-            _Source = source;
+            Source = source;
             ClassName = source.Name;
 
-            foreach (XmlElement elInterface in _Source.ChildNodes)
+            foreach (XmlElement elInterface in Source.ChildNodes)
             {
                 Interfaces.Add(new SDxInterfaceInstance(elInterface));
             }

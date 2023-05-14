@@ -10,20 +10,20 @@ namespace SDxDeveloper.Client.ViewModels
 {
     public class SDxObjectInstanceViewModel : ViewModelBase
     {
-        private readonly SDxObjectInstance? _SDxObject = null;
+        public SDxObjectInstance Instance { get; }
 
-        public string? ClassName => _SDxObject?.ClassName;
+        public string? ClassName => Instance?.ClassName;
 
-        public string? Name => _SDxObject?.GetProperty("Name");
+        public string? Name => Instance?.GetProperty("Name");
 
-        public string? UID => _SDxObject?.GetProperty("UID");
+        public string? UID => Instance?.GetProperty("UID");
 
         public ObservableCollection<SDxInterfaceInstanceViewModel>? Interfaces { get; }
 
         public SDxObjectInstanceViewModel(SDxObjectInstance sdxObject)
         {
-            _SDxObject = sdxObject;
-            Interfaces = new ObservableCollection<SDxInterfaceInstanceViewModel>(_SDxObject?.Interfaces.Select(x => new SDxInterfaceInstanceViewModel(x)));
+            Instance = sdxObject;
+            Interfaces = new ObservableCollection<SDxInterfaceInstanceViewModel>(Instance?.Interfaces.Select(x => new SDxInterfaceInstanceViewModel(x)));
         }
     }
 }

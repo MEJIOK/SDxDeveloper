@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml;
 
 namespace SDxDeveloper.Client.Commands
 {
@@ -28,7 +29,22 @@ namespace SDxDeveloper.Client.Commands
 
         public void Execute(object? parameter)
         {
-            var ofd = new SaveFileDialog { };
+            var ofd = new SaveFileDialog
+            {
+                InitialDirectory = Properties.Settings.Default.DefaultFileExplorePath,
+                Filter = "XML|*.xml|Original|*.dwh",
+                FileName = "exported_objects",
+                Title = "Export SDx Objects..."
+            };
+            if (ofd.ShowDialog() == true)
+            {
+                var document = new XmlDocument { PreserveWhitespace = Properties.Settings.Default.ExportPreserveWhitespace };
+                document.InsertBefore(document.CreateXmlDeclaration("1.0", "utf-8", null), document.DocumentElement);
+                XmlNode container = document.CreateNode(XmlNodeType.Element, "Container", string.Empty);
+                document.AppendChild(container);
+                _ObjectsToExport?.ToList().ForEach(obj => container.AppendChild(document.ImportNode(obj.Instance.Source, true)));
+                document.Save(ofd.FileName);
+            }
         }
     }
 }

@@ -2,7 +2,6 @@
 using SDxDeveloper.Client.State;
 using SDxDeveloper.Client.ViewModels;
 using SDxDeveloper.Domain.Models;
-using SDxDeveloper.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,21 +31,13 @@ namespace SDxDeveloper.Client.Commands
 
         public void Execute(object? parameter)
         {
-            var dialog = new OpenFileDialog { Filter = "XML|*.xml", Multiselect = true };
-
-            var settings = new XmlDocument();
-            settings.Load("usersettings.xml");
-
-            if (settings.DocumentElement != null)
+            var dialog = new OpenFileDialog
             {
-                foreach (XmlNode node in settings.DocumentElement)
-                {
-                    if (node.Name == "DefaultFileExplorePath")
-                    {
-                        dialog.InitialDirectory = node.InnerText; 
-                    }
-                }
-            }
+                InitialDirectory = Properties.Settings.Default.DefaultFileExplorePath,
+                Filter = "XML|*.xml",
+                Multiselect = true,
+                Title = "Load SDx Objects..."
+            };
 
             if (dialog.ShowDialog() == true)
             {

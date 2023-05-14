@@ -1,26 +1,34 @@
-﻿using SDxDeveloper.Client.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using SDxDeveloper.Client.Properties;
+using SDxDeveloper.Client.State;
+using SDxDeveloper.Client.ViewModels;
+using System.IO;
 using System.Windows;
+using System.Xml.Serialization;
 
 namespace SDxDeveloper.Client
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            Window window = new MainWindow();
-            window.DataContext = new MainViewModel();
-            window.Show();
-
+            new MainWindow { DataContext = new MainViewModel() }.Show();
+            using var fp = new FileStream("usersettings.xml", FileMode.Open, FileAccess.Read);
+            UserSettings? settings = new XmlSerializer(typeof(UserSettings)).Deserialize(fp) as UserSettings;
+            Settings.Default.DefaultFileExplorePath = settings?.DefaultFileExplorePath;
+            Settings.Default.ExportPreserveWhitespace = settings != null && settings.ExportPreserveWhitespace;
             base.OnStartup(e);
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            using var fp = new FileStream("usersettings.xml", FileMode.Create, FileAccess.Write);
+            new XmlSerializer(typeof(UserSettings)).Serialize(fp, new UserSettings
+                { 
+                    DefaultFileExplorePath = Settings.Default.DefaultFileExplorePath,
+                    ExportPreserveWhitespace = Settings.Default.ExportPreserveWhitespace
+                }
+            );
+            base.OnExit(e);
         }
     }
 }
