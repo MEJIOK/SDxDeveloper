@@ -11,9 +11,19 @@ namespace SDxDeveloper.Domain.Models
     {
         private readonly XmlAttribute _Source;
 
+        private string? _Value = null;
+
         public string? Name { get; set; }
 
-        public string? Value { get; set; }
+        public string? Value
+        {
+            get => _Value;
+            set
+            {
+                _Value = value;
+                _Source.Value = value;
+            }
+        }
 
         public SDxPropertyInstance(XmlAttribute source)
         {

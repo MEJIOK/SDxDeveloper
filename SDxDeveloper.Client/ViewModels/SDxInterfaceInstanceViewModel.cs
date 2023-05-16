@@ -1,4 +1,5 @@
-﻿using SDxDeveloper.Domain.Models;
+﻿using SDxDeveloper.Client.ViewModels.PropertyTyped;
+using SDxDeveloper.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,12 +15,25 @@ namespace SDxDeveloper.Client.ViewModels
 
         public string? Name => _SdxInterface?.Name;
 
-        public ObservableCollection<SDxPropertyInstanceViewModel> Properties { get; }
+        public ObservableCollection<SDxPropertyInstanceViewModel> Properties { get; } = new();
 
         public SDxInterfaceInstanceViewModel(SDxInterfaceInstance sdxInterface)
         {
             _SdxInterface = sdxInterface;
-            Properties = new ObservableCollection<SDxPropertyInstanceViewModel>(sdxInterface.Properties.Select(x => new SDxPropertyInstanceViewModel(x)));
+            sdxInterface.Properties.ForEach(x =>
+            {
+                if (x != null)
+                {
+                    if (new List<string> { "True", "False" }.Contains(x?.Value))
+                    {
+                        Properties.Add(new SDxBooleanInstanceViewModel(x));
+                    }
+                    else
+                    {
+                        Properties.Add(new SDxStringInstanceViewModel(x));
+                    }
+                }
+            });
         }
     }
 }

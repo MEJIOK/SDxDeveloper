@@ -1,6 +1,7 @@
 ﻿using SDxDeveloper.Client.Properties;
 using SDxDeveloper.Client.State;
 using SDxDeveloper.Client.ViewModels;
+using System;
 using System.IO;
 using System.Windows;
 using System.Xml.Serialization;
@@ -11,11 +12,22 @@ namespace SDxDeveloper.Client
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            new MainWindow { DataContext = new MainViewModel() }.Show();
-            using var fp = new FileStream("usersettings.xml", FileMode.Open, FileAccess.Read);
-            UserSettings? settings = new XmlSerializer(typeof(UserSettings)).Deserialize(fp) as UserSettings;
-            Settings.Default.DefaultFileExplorePath = settings?.DefaultFileExplorePath;
-            Settings.Default.ExportPreserveWhitespace = settings != null && settings.ExportPreserveWhitespace;
+            try
+            {
+                new MainWindow { DataContext = new MainViewModel() }.Show();
+                using var fp = new FileStream("usersettings.xml", FileMode.Open, FileAccess.Read);
+                UserSettings? settings = new XmlSerializer(typeof(UserSettings)).Deserialize(fp) as UserSettings;
+                Settings.Default.DefaultFileExplorePath = settings?.DefaultFileExplorePath;
+                Settings.Default.ExportPreserveWhitespace = settings != null && settings.ExportPreserveWhitespace;
+            }
+            catch (Exception ex)
+            {
+                if (ex is InvalidOperationException ioex)
+                {
+                    MessageBox.Show(ioex.Message, ioex.TargetSite?.Name.ToString(), MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            
             base.OnStartup(e);
         }
 

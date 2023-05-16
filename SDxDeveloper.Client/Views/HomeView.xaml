@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pvm="clr-namespace:SDxDeveloper.Client.ViewModels.PropertyTyped"
     xmlns:vm="clr-namespace:SDxDeveloper.Client.ViewModels"
     d:DataContext="{d:DesignInstance Type=vm:HomeViewModel}"
     d:DesignHeight="400"
@@ -95,10 +96,17 @@
 
                         <ListView ItemsSource="{Binding Properties}">
                             <ListView.Resources>
-                                <DataTemplate DataType="{x:Type vm:SDxPropertyInstanceViewModel}">
+                                <DataTemplate DataType="{x:Type pvm:SDxStringInstanceViewModel}">
                                     <WrapPanel>
                                         <Label Content="{Binding Name}" />
-                                        <TextBox Text="{Binding Value}" VerticalAlignment="Center" />
+                                        <TextBox VerticalAlignment="Center" Text="{Binding Value}" />
+                                    </WrapPanel>
+                                </DataTemplate>
+
+                                <DataTemplate DataType="{x:Type pvm:SDxBooleanInstanceViewModel}">
+                                    <WrapPanel>
+                                        <Label Content="{Binding Name}" />
+                                        <CheckBox VerticalAlignment="Center" IsChecked="{Binding Value}" />
                                     </WrapPanel>
                                 </DataTemplate>
                             </ListView.Resources>
