@@ -14,6 +14,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -40,5 +42,19 @@
             Grid.Column="1"
             VerticalAlignment="Center"
             IsChecked="{Binding ExportPreserveWhitespace}" />
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Content="Site 1 Target Path" />
+        <TextBox Grid.Row="2"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"
+                 Text="{Binding SiteTargetPath1}" />
+        <Label Grid.Row="3"
+               Grid.Column="0"
+               Content="Site 2 Target Path" />
+        <TextBox Grid.Row="3"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"
+                 Text="{Binding SiteTargetPath2}" />
     </Grid>
 </UserControl>

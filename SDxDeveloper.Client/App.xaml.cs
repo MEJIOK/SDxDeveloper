@@ -20,6 +20,8 @@ namespace SDxDeveloper.Client
                 UserSettings? settings = new XmlSerializer(typeof(UserSettings)).Deserialize(fp) as UserSettings;
                 Settings.Default.DefaultFileExplorePath = settings?.DefaultFileExplorePath;
                 Settings.Default.ExportPreserveWhitespace = settings != null && settings.ExportPreserveWhitespace;
+                Settings.Default.SiteTargetPath1 = settings?.SiteTargetPath1;
+                Settings.Default.SiteTargetPath2 = settings?.SiteTargetPath2;
             }
             catch (Exception ex)
             {
@@ -38,7 +40,9 @@ namespace SDxDeveloper.Client
             new XmlSerializer(typeof(UserSettings)).Serialize(fp, new UserSettings
                 { 
                     DefaultFileExplorePath = Settings.Default.DefaultFileExplorePath,
-                    ExportPreserveWhitespace = Settings.Default.ExportPreserveWhitespace
+                    ExportPreserveWhitespace = Settings.Default.ExportPreserveWhitespace,
+                    SiteTargetPath1 = Settings.Default.SiteTargetPath1,
+                    SiteTargetPath2 = Settings.Default.SiteTargetPath2
                 }
             );
             base.OnExit(e);

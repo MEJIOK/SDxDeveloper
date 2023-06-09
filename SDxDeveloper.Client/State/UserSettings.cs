@@ -5,5 +5,9 @@
         public string? DefaultFileExplorePath;
 
         public bool ExportPreserveWhitespace;
+
+        public string? SiteTargetPath1;
+
+        public string? SiteTargetPath2;
     }
 }
