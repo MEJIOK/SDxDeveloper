@@ -13,5 +13,7 @@ namespace SDxDeveloper.Client.State.Navigators
         ViewModelBase CurrentViewModel { get; set; }
 
         ICommand UpdateCurrentViewModelCommand { get; }
+
+        void SetView(ViewType viewType);
     }
 }

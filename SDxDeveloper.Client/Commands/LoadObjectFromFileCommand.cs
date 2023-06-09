@@ -50,10 +50,20 @@ namespace SDxDeveloper.Client.Commands
                         && doc.DocumentElement != null
                         && _LoadedObjects is ObservableCollection<SDxObjectInstanceViewModel> observableLoadedObjects)
                     {
-                        foreach (XmlElement element in doc.DocumentElement)
-                        {
-                            observableLoadedObjects.Add(new SDxObjectInstanceViewModel(new SDxObjectInstance(element)));
-                        }
+                        if (doc.DocumentElement.Name == "Containers")
+                            foreach (XmlNode container in doc.DocumentElement.ChildNodes)
+                                if (container.Name == "Container")
+                                {
+                                    foreach (XmlNode node in container.ChildNodes)
+                                        if (node is XmlElement element) 
+                                            observableLoadedObjects.Add(new SDxObjectInstanceViewModel(new SDxObjectInstance(element)));
+
+                                    foreach (SDxObjectInstanceViewModel rel in observableLoadedObjects)
+                                        if (rel.ClassName == "Rel")
+                                            foreach (SDxObjectInstanceViewModel obj in observableLoadedObjects)
+                                                if (obj.ClassName != "Rel" && (obj.UID == rel.Instance.GetProperty("UID1") || obj.Instance.GetProperty("UID") == rel.Instance.GetProperty("UID2")))
+                                                    obj.Instance.Relations.Add(rel.Instance);
+                                }
                     }
                 }
             }

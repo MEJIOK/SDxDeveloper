@@ -14,6 +14,8 @@ namespace SDxDeveloper.Client.ViewModels
 
         public IEnumerable<SDxInterfaceInstanceViewModel> SelectedObjectInterfaces { get; } = new ObservableCollection<SDxInterfaceInstanceViewModel>();
 
+        public IEnumerable<SDxRelationshipInstanceViewModel> SelectedObjectRelations { get; } = new ObservableCollection<SDxRelationshipInstanceViewModel>();
+
         public SDxObjectInstanceViewModel? SelectedObject
         {
             get => _SelectedObject;
@@ -25,7 +27,13 @@ namespace SDxDeveloper.Client.ViewModels
                 {
                     selectedInterfaces.Clear();
                     _SelectedObject?.Interfaces?.ToList().ForEach(selectedInterfaces.Add);
-                }   
+                }
+
+                if (SelectedObjectRelations is ObservableCollection<SDxRelationshipInstanceViewModel> selectedRelations)
+                {
+                    selectedRelations.Clear();
+                    _SelectedObject?.Instance?.Relations?.ToList().ForEach(x => selectedRelations.Add(new SDxRelationshipInstanceViewModel(x)));
+                }
             }
         }
 

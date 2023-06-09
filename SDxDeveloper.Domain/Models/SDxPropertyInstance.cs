@@ -1,35 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
+﻿using System.Xml;
 
 namespace SDxDeveloper.Domain.Models
 {
-    public class SDxPropertyInstance
+    public class SDxPropertyInstance : Base.SourceInstance
     {
-        private readonly XmlAttribute _Source;
-
-        private string? _Value = null;
-
-        public string? Name { get; set; }
+        public string Name => Source.Name;
 
         public string? Value
         {
-            get => _Value;
-            set
-            {
-                _Value = value;
-                _Source.Value = value;
-            }
+            get => Source.Value;
+            set => Source.Value = value;
         }
 
-        public SDxPropertyInstance(XmlAttribute source)
-        {
-            _Source = source;
-            Name = source.Name;
-            Value = source.Value;
-        }
+        public SDxPropertyInstance(XmlAttribute source) : base(source) { }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using SDxDeveloper.Client.Properties;
 using SDxDeveloper.Client.State;
 using SDxDeveloper.Client.ViewModels;
+using SDxDeveloper.Services.API;
 using System;
 using System.IO;
 using System.Windows;

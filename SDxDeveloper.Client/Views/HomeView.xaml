@@ -83,37 +83,94 @@
             </ListView.Resources>
         </ListView>
 
-        <ListView
-            Grid.Row="1"
-            Grid.Column="1"
-            ItemsSource="{Binding SelectedObjectInterfaces}">
-            <ListView.Resources>
-                <DataTemplate DataType="{x:Type vm:SDxInterfaceInstanceViewModel}">
-                    <GroupBox>
-                        <GroupBox.Header>
-                            <TextBlock FontWeight="Bold" Text="{Binding Name}" />
-                        </GroupBox.Header>
+        <TabControl Grid.Row="1" Grid.Column="1">
+            <TabItem Header="Properties">
+                <ListView ItemsSource="{Binding SelectedObjectInterfaces}">
+                    <ListView.Resources>
+                        <DataTemplate DataType="{x:Type vm:SDxInterfaceInstanceViewModel}">
+                            <GroupBox>
+                                <GroupBox.Header>
+                                    <TextBlock FontWeight="Bold" Text="{Binding Name}" />
+                                </GroupBox.Header>
 
-                        <ListView ItemsSource="{Binding Properties}">
-                            <ListView.Resources>
-                                <DataTemplate DataType="{x:Type pvm:SDxStringInstanceViewModel}">
-                                    <WrapPanel>
-                                        <Label Content="{Binding Name}" />
-                                        <TextBox VerticalAlignment="Center" Text="{Binding Value}" />
-                                    </WrapPanel>
-                                </DataTemplate>
+                                <ListView ItemsSource="{Binding Properties}">
+                                    <ListView.Resources>
+                                        <DataTemplate DataType="{x:Type pvm:SDxStringInstanceViewModel}">
+                                            <WrapPanel>
+                                                <Label Content="{Binding Name}" />
+                                                <TextBox
+                                            VerticalAlignment="Center"
+                                            Text="{Binding Value}"
+                                            BorderThickness="0, 0, 0, 1"
+                                            FontWeight="Medium"
+                                            Background="Transparent" />
+                                            </WrapPanel>
+                                        </DataTemplate>
 
-                                <DataTemplate DataType="{x:Type pvm:SDxBooleanInstanceViewModel}">
-                                    <WrapPanel>
-                                        <Label Content="{Binding Name}" />
-                                        <CheckBox VerticalAlignment="Center" IsChecked="{Binding Value}" />
-                                    </WrapPanel>
-                                </DataTemplate>
-                            </ListView.Resources>
-                        </ListView>
-                    </GroupBox>
-                </DataTemplate>
-            </ListView.Resources>
-        </ListView>
+                                        <DataTemplate DataType="{x:Type pvm:SDxBooleanInstanceViewModel}">
+                                            <WrapPanel>
+                                                <Label Content="{Binding Name}" />
+                                                <CheckBox VerticalAlignment="Center" IsChecked="{Binding Value}" />
+                                            </WrapPanel>
+                                        </DataTemplate>
+                                    </ListView.Resources>
+                                </ListView>
+                            </GroupBox>
+                        </DataTemplate>
+                    </ListView.Resources>
+                </ListView>
+            </TabItem>
+
+            <TabItem Header="Relations">
+                <ListView ItemsSource="{Binding SelectedObjectRelations}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Content="End 1:" />
+                                <TextBox
+                                    Grid.Row="0" Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding UID1, Mode=OneWay}"
+                                    BorderThickness="0, 0, 0, 1"
+                                    FontWeight="Medium"
+                                    Background="Transparent"
+                                    IsReadOnly="True"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Definition:" />
+                                <TextBox
+                                    Grid.Row="1" Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding DefUID, Mode=OneWay}"
+                                    BorderThickness="0, 0, 0, 1"
+                                    FontWeight="Medium"
+                                    Background="Transparent"
+                                    IsReadOnly="True"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Content="End 2:" />
+                                <TextBox
+                                    Grid.Row="2" Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding UID2, Mode=OneWay}"
+                                    BorderThickness="0, 0, 0, 1"
+                                    FontWeight="Medium"
+                                    Background="Transparent"
+                                    IsReadOnly="True"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>

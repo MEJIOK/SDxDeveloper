@@ -1,49 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Xml;
 
 namespace SDxDeveloper.Domain.Models
 {
-    public class SDxObjectInstance
+    public class SDxObjectInstance : Base.SourceInstance
     {
-        public XmlElement Source { get; }
+        public string ClassName => Source.Name;
 
-        public string? ClassName { get; set; }
+        public List<SDxInterfaceInstance> Interfaces { get; } = new();
 
-        public List<SDxInterfaceInstance>? Interfaces { get; set; } = new List<SDxInterfaceInstance>();
+        public List<SDxObjectInstance> Relations { get; } = new();
 
-        public SDxObjectInstance(XmlElement source)
+        public SDxObjectInstance(XmlElement source) : base(source)
         {
-            Source = source;
-            ClassName = source.Name;
-
-            foreach (XmlElement elInterface in Source.ChildNodes)
-            {
+            foreach (XmlElement elInterface in source.ChildNodes)
                 Interfaces.Add(new SDxInterfaceInstance(elInterface));
-            }
         }
 
         public string? GetProperty(string propertyName)
         {
-            if (Interfaces != null)
-            {
-                foreach (SDxInterfaceInstance intf in Interfaces)
-                {
-                    if (intf.Properties != null)
-                    {
-                        foreach (SDxPropertyInstance prop in intf.Properties)
-                        {
-                            if (prop != null && prop.Name == propertyName)
-                            {
-                                return prop.Value;
-                            }
-                        }
-                    }
-                }
-            }
+            foreach (SDxInterfaceInstance intf in Interfaces)
+                foreach (SDxPropertyInstance prop in intf.Properties)
+                    if (prop.Name == propertyName)
+                        return prop.Value;
 
             return null;
         }

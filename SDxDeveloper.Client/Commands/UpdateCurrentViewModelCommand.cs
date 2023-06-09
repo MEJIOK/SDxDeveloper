@@ -13,7 +13,7 @@ namespace SDxDeveloper.Client.Commands
     {
         public event EventHandler? CanExecuteChanged;
 
-        private INavigator _Navigator;
+        private readonly INavigator _Navigator;
 
         public UpdateCurrentViewModelCommand(INavigator navigator)
         {
@@ -27,23 +27,7 @@ namespace SDxDeveloper.Client.Commands
 
         public void Execute(object? parameter)
         {
-            if (parameter is ViewType)
-            {
-                var viewType = (ViewType)parameter;
-                switch (viewType)
-                {
-                    case ViewType.Home:
-                        _Navigator.CurrentViewModel = new HomeViewModel();
-                        break;
-
-                    case ViewType.Settings:
-                        _Navigator.CurrentViewModel = new SettingsViewModel();
-                        break;
-
-                    default:
-                        break;
-                }
-            }
+            if (parameter is ViewType viewType) _Navigator.SetView(viewType);
         }
     }
 }

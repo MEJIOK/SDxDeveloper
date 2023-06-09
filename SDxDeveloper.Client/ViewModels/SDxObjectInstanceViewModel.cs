@@ -12,7 +12,7 @@ namespace SDxDeveloper.Client.ViewModels
     {
         public SDxObjectInstance Instance { get; }
 
-        public string? ClassName => Instance?.ClassName;
+        public string ClassName => Instance.ClassName;
 
         public string? Name => Instance?.GetProperty("Name");
 
@@ -20,10 +20,13 @@ namespace SDxDeveloper.Client.ViewModels
 
         public ObservableCollection<SDxInterfaceInstanceViewModel>? Interfaces { get; }
 
+        public ObservableCollection<SDxRelationshipInstanceViewModel>? Relations { get; }
+
         public SDxObjectInstanceViewModel(SDxObjectInstance sdxObject)
         {
             Instance = sdxObject;
             Interfaces = new ObservableCollection<SDxInterfaceInstanceViewModel>(Instance?.Interfaces.Select(x => new SDxInterfaceInstanceViewModel(x)));
+            Relations = new ObservableCollection<SDxRelationshipInstanceViewModel>(Instance?.Relations.Select(x => new SDxRelationshipInstanceViewModel(x)));
         }
     }
 }
