@@ -25,5 +25,11 @@
             get => Properties.Settings.Default.SiteTargetPath2;
             set => Properties.Settings.Default.SiteTargetPath2 = value;
         }
+
+        public string OAuthToken
+        {
+            get => Properties.Settings.Default.OAuthToken;
+            set => Properties.Settings.Default.OAuthToken = value;
+        }
     }
 }

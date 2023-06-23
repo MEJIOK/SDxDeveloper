@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModalControls\ModalControls.csproj" />
     <ProjectReference Include="..\SDxDeveloper.Domain\SDxDeveloper.Domain.csproj" />
     <ProjectReference Include="..\SDxDeveloper.Services\SDxDeveloper.Services.csproj" />
   </ItemGroup>

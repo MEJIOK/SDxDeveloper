@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SDxDeveloper.Client
+namespace SDxDeveloper.Client.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Layout.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Layout : UserControl
     {
-        public MainWindow()
+        public Layout()
         {
             InitializeComponent();
         }

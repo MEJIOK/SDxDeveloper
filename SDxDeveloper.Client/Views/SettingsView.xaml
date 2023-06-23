@@ -16,6 +16,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -32,12 +33,11 @@
             Grid.Column="1"
             VerticalAlignment="Center"
             Text="{Binding DefaultFileExplorePath}" />
-
         <Label
             Grid.Row="1"
             Grid.Column="0"
             Content="Export Preserve Whitespace" />
-        <CheckBox
+		<CheckBox
             Grid.Row="1"
             Grid.Column="1"
             VerticalAlignment="Center"
@@ -56,5 +56,14 @@
                  Grid.Column="1"
                  VerticalAlignment="Center"
                  Text="{Binding SiteTargetPath2}" />
+		<Label Grid.Row="4"
+	           Grid.Column="0"
+	           Content="OAuth2 Token" />
+		<TextBox Grid.Row="4"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"
+                 Text="{Binding OAuthToken}"
+                 MaxWidth="600px"
+                 TextWrapping="Wrap"/>
     </Grid>
 </UserControl>

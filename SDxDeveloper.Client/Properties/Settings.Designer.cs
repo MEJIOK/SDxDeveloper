@@ -70,5 +70,17 @@ namespace SDxDeveloper.Client.Properties {
                 this["SiteTargetPath2"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OAuthToken {
+            get {
+                return ((string)(this["OAuthToken"]));
+            }
+            set {
+                this["OAuthToken"] = value;
+            }
+        }
     }
 }
