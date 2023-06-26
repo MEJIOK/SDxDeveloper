@@ -69,9 +69,12 @@ namespace SDxDeveloper.Client
                 UserSettings? settings = new XmlSerializer(typeof(UserSettings)).Deserialize(fp) as UserSettings;
                 Settings.Default.DefaultFileExplorePath = settings?.DefaultFileExplorePath;
                 Settings.Default.ExportPreserveWhitespace = settings != null && settings.ExportPreserveWhitespace;
-                Settings.Default.SiteTargetPath1 = settings?.SiteTargetPath1;
-                Settings.Default.SiteTargetPath2 = settings?.SiteTargetPath2;
-                Settings.Default.OAuthToken = settings?.OAuthToken;
+                Settings.Default.Site1_TargetPath = settings?.Site1_TargetPath;
+                Settings.Default.Site2_TargetPath = settings?.Site2_TargetPath;
+                Settings.Default.Site1_OAuthToken = settings?.Site1_OAuthToken;
+                Settings.Default.Site2_OAuthToken = settings?.Site2_OAuthToken;
+                Settings.Default.Site2_OAuthToken = settings?.Site1_HomeDirectory;
+                Settings.Default.Site2_OAuthToken = settings?.Site2_HomeDirectory;
             }
             catch (Exception ex)
             {
@@ -91,9 +94,12 @@ namespace SDxDeveloper.Client
                 { 
                     DefaultFileExplorePath = Settings.Default.DefaultFileExplorePath,
                     ExportPreserveWhitespace = Settings.Default.ExportPreserveWhitespace,
-                    SiteTargetPath1 = Settings.Default.SiteTargetPath1,
-                    SiteTargetPath2 = Settings.Default.SiteTargetPath2,
-                    OAuthToken = Settings.Default.OAuthToken
+                    Site1_TargetPath = Settings.Default.Site1_TargetPath,
+                    Site2_TargetPath = Settings.Default.Site2_TargetPath,
+                    Site1_OAuthToken = Settings.Default.Site1_OAuthToken,
+                    Site2_OAuthToken = Settings.Default.Site2_OAuthToken,
+                    Site1_HomeDirectory = Settings.Default.Site1_HomeDirectory,
+                    Site2_HomeDirectory = Settings.Default.Site2_HomeDirectory
                 }
             );
             base.OnExit(e);

@@ -18,8 +18,8 @@ namespace SDxDeveloper.Client.Commands
         {
             // new Views.Windows.QuerySelector { DataContext = new QuerySelectorViewModel() }.ShowDialog();
             var odata = new ODataProvider(
-                Properties.Settings.Default.SiteTargetPath2,
-                Properties.Settings.Default.OAuthToken,
+                Properties.Settings.Default.Site2_TargetPath,
+                Properties.Settings.Default.Site1_OAuthToken,
                 "PR_BGPP");
             try
             {

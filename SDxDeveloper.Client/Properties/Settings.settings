@@ -8,13 +8,22 @@
     <Setting Name="ExportPreserveWhitespace" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="SiteTargetPath1" Type="System.String" Scope="User">
+    <Setting Name="Site1_TargetPath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="SiteTargetPath2" Type="System.String" Scope="User">
+    <Setting Name="Site2_TargetPath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="OAuthToken" Type="System.String" Scope="User">
+    <Setting Name="Site1_OAuthToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Site2_OAuthToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Site1_HomeDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Site2_HomeDirectory" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

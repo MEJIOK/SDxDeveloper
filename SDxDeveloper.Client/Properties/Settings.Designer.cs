@@ -50,36 +50,72 @@ namespace SDxDeveloper.Client.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SiteTargetPath1 {
+        public string Site1_TargetPath {
             get {
-                return ((string)(this["SiteTargetPath1"]));
+                return ((string)(this["Site1_TargetPath"]));
             }
             set {
-                this["SiteTargetPath1"] = value;
+                this["Site1_TargetPath"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SiteTargetPath2 {
+        public string Site2_TargetPath {
             get {
-                return ((string)(this["SiteTargetPath2"]));
+                return ((string)(this["Site2_TargetPath"]));
             }
             set {
-                this["SiteTargetPath2"] = value;
+                this["Site2_TargetPath"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string OAuthToken {
+        public string Site1_OAuthToken {
             get {
-                return ((string)(this["OAuthToken"]));
+                return ((string)(this["Site1_OAuthToken"]));
             }
             set {
-                this["OAuthToken"] = value;
+                this["Site1_OAuthToken"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Site2_OAuthToken {
+            get {
+                return ((string)(this["Site2_OAuthToken"]));
+            }
+            set {
+                this["Site2_OAuthToken"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Site1_HomeDirectory {
+            get {
+                return ((string)(this["Site1_HomeDirectory"]));
+            }
+            set {
+                this["Site1_HomeDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Site2_HomeDirectory {
+            get {
+                return ((string)(this["Site2_HomeDirectory"]));
+            }
+            set {
+                this["Site2_HomeDirectory"] = value;
             }
         }
     }
